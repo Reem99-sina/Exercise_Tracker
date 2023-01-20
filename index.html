@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercise-tracker</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>exercise-tracker</h1>
+    <form action="/api/users" method="post" class="color-green" enctype="text/plain">
+        <h3>
+            Create a New User
+        </h3>
+        <p>
+            <code>POST /api/users</code>
+        </p>
+        <input type="text" name="username" placeholder="username"/>
+        <input type="submit"  value="submit"/>
+
+    </form>
+    <form action="/api/users/:_id/exercises" method="post" class="color-green">
+        <h3>
+            POST /api/users/:_id/exercises
+        </h3>
+        <p>
+            <code>POST /api/users/:_id/exercises</code>
+        </p>
+        <input id="uid" type="text" name="_id" placeholder=":_id"/>
+        <input id="desc" type="text" name="description" placeholder="description"/>
+        <input id="dur" type="text" name="duration" placeholder="duration *(min)"/>
+        <input id="dur" type="text" name="date" placeholder="date *(yyyy-mm-dd)"/>
+        <input type="submit"  value="submit"/>
+    </form>
+    <p>GET user's exercise log: <code>GET /api/users/:_id/logs?[from][&to][&limit]</code></p>
+    <P>[ ] = optional</P>
+    <P>from, to = dates (yyyy-mm-dd); limit = number</P>
+</body>
+</html>
